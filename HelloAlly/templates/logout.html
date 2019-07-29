@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../ static/style.css">
+ {% if title %}
+        <title>Hello Ally-Kareena {{ title }}</title>
+    {% else %}
+        <title>Sign Up</title>
+    {% endif %}
+    </head>
+<body>
+<section class="home-banner-area relative" id="home" data-parallax="scroll" data-image-src="../static/img/header-bg.jpg">
+<body>
+
+   <div class="overlay-bg overlay"></div>
+		<h3 class="template-name">Log Out</h3>
+        <div class="container">
+			<div class="row fullscreen">
+				<div class="banner-content col-lg-11">
+					<h2> <font color="white"> You have been logged out</font></h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}" ><font color="white">Log in again</font></a>
+        </small>
+    </div>
+				</div>
+			</div>
+		</div>
+    </body>
+</section>
+</body>
+
+
+
+
+{% endblock content %}

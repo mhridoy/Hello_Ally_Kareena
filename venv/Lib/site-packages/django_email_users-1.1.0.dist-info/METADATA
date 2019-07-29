@@ -1,0 +1,116 @@
+Metadata-Version: 2.0
+Name: django-email-users
+Version: 1.1.0
+Summary: Stock user app but without usernames
+Home-page: https://github.com/bennylope/django-email-users
+Author: Ben Lopatin
+Author-email: ben@benlopatin.com
+License: BSD
+Keywords: django-email-users
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+
+==================
+Django email users
+==================
+
+.. image:: https://secure.travis-ci.org/bennylope/django-email-users.svg?branch=master
+    :alt: Build Status
+    :target: http://travis-ci.org/bennylope/django-email-users
+
+.. image:: https://pypip.in/v/django-email-users/badge.svg
+    :alt: Current PyPI release
+    :target: https://pypi.python.org/pypi/django-email-users
+
+.. image:: https://pypip.in/d/django-email-users/badge.svg
+    :alt: Download count
+    :target: https://pypi.python.org/pypi/django-email-users
+
+For when you want regular Django users but without the usernames.
+
+This is a stock replacement for Django's `auth.User` model that removes the
+`username` field in favor of a unique `email` field.
+Both the `User` model and the forms enforce lower
+cased email addresses to ensure uniqueness without
+surprises.
+
+Inspired by the `users` module in pydanny's original `Django cookiecutter
+project template <https://github.com/pydanny/cookiecutter-django/>`_ which I
+kept using and then editing to support email addresses.
+
+Installing
+----------
+
+Install and download with pip::
+
+    pip install django-email-users
+
+Add to your installed apps in your settings.py file::
+
+    INSTALLED_APPS = (
+        'users',
+    )
+
+Change your project's configured user in your settings.py file::
+
+    AUTH_USER_MODEL = 'users.User'
+
+Profit.
+
+If you are using South with Django prior to Django 1.7, you will need to use
+South 1+.
+
+
+
+
+History
+-------
+
+1.1.0 (2017-07-11)
+++++++++++++++++++
+
+* Updated password change form link for User's ModelAdmin class
+
+1.0.0 (2016-04-21)
+++++++++++++++++++
+
+* Remove `User.title` field (POTENTIALLY BREAKING). This field should not have
+  been added(!). If you're using this field you shouldn't upgrade!
+* Squashed migrations (POTENTIALLY BREAKING). If you're using 0.4.0 or an older
+  version and want to upgrade, consider faking the migration to 0001 and then
+  removing the `title` field. As long as you're using 0.4.0 the `title` field
+  is nullable, however.
+* Drop support for Django 1.6, 1.7
+* Add support for Django 1.9
+* Add support for Python 3.5
+
+0.4.0 (2015-04-15)
+++++++++++++++++++
+
+* Update Django migrations to reflect field changes for base user model
+
+0.3.0 (2015-04-10)
+++++++++++++++++++
+
+* Support Django 1.8
+
+0.1.1 (2014-11-24)
+++++++++++++++++++
+
+* Adds a get_username method to User model
+
+0.1.0 (2014-08-15)
+++++++++++++++++++
+
+* First release on PyPI.
+
+

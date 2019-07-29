@@ -1,0 +1,205 @@
+
+{% extends "VA/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+	<body>
+		<!-- Load Conversational Form (v0.9.6) -->
+		 <script type="text/javascript" src="https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js?v=1.0.0" crossorigin></script>
+		<!-- Load docs -->
+		 <script src="../static/build/conversational-form-docs.min.js?v=1.0.0"></script>
+
+		<!-- dev -> -->
+		<!-- <script id="conversational-form-development" src="../build/conversational-form.js"></script>
+		<script src="build/cf/ConversationalFormDocs.js"></script>
+		<link rel="stylesheet" href="../dist/conversational-form.min.css">  -->
+
+		<main id="conversational-form-docs" class="content">
+			<menu id="small-screen-menu">
+				<h2>Take a Ride</h2>
+
+				<div class="switch-btn">
+					<label class="switch">
+						<input type="checkbox" onclick="window.conversationalFormDocs.toggleConversation(event)">
+						<div class="slider round"></div>
+					</label>
+				</div>
+
+				<div class="hamburger-btn" onclick="window.conversationalFormDocs.toggleMenuState(event)">
+					<svg viewBox="0 0 29 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+							<g transform="translate(-325.000000, -87.000000)" stroke="#FFFFFF" stroke-width="2">
+								<g transform="translate(325.000000, 87.000000)">
+									<path d="M27.4802431,7 L1.23827993,7"></path>
+									<path d="M27.4802431,1 L1.23827993,1"></path>
+									<path d="M27.4802431,13 L1.23827993,13"></path>
+								</g>
+							</g>
+						</g>
+					</svg>
+				</div>
+			</menu>
+
+			<div class="switch-btn" id="cf-toggle-btn" data-label="Enable Text Form" data-label-toggled="Disable Text Form">
+				<label class="switch">
+					<input type="checkbox" onclick="window.conversationalFormDocs.toggleConversation(event)">
+					<div class="slider round"></div>
+				</label>
+			</div>
+
+
+			<section id="info" role="info">
+				<div class="close-btn" onclick="window.conversationalFormDocs.toggleMenuState()">
+					<svg viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+							<g transform="translate(-328.000000, -83.000000)" stroke="#FFFFFF" stroke-width="2">
+								<g id="close" transform="translate(329.000000, 84.000000)">
+									<path d="M19.6371966,19.2779351 L1.08132646,0.722064927"></path>
+									<path d="M19.4923318,0.722064927 L0.936461672,19.2779351"></path>
+								</g>
+							</g>
+						</g>
+					</svg>
+				</div>
+
+
+
+				<article>
+					<h1 id="writer"><font color="white">Take A Ride !!</font>
+
+					</h1>
+					<h2>
+						<font color="white">Ally - Kareena is a virtual assistance by </font> <a href="http://github.com/mhridoy" target="_blank"><font color="white">mhridoy soft</font></a> <font color="white">to provide easier life.</font>
+						</br></br><font color="white">Want to take a ride</font> <a href="examples.html" target="_self"><font color="white">here</font></a> <font color="white">or fill out the form </font><span class="below-768"><font color="white">below</font></span><span class="above-768"><font color="white">on the right</font></span> <font color="white">to take it for a spin</font> 👉
+					</h2>
+
+
+					<div class="github-button__outer">
+						<a
+						   class="github-button"
+						   href="https://github.com/mhridoy"
+						   data-icon="octicon-repo-forked"
+						   data-show-count="true"
+						   aria-label="Fork space10-community/conversational-form on GitHub"
+						 >
+							Fork
+						</a>
+						<a
+						    class="github-button"
+						    href="https://github.com/mhridoy"
+						    data-icon="octicon-star"
+						    data-show-count="true"
+						    aria-label="Star space10-community/conversational-form on GitHub"
+						>
+							Star
+						</a>
+					</div>
+
+					<footer>
+
+
+
+					</footer>
+				</article>
+			</section>
+
+			<section id="form" role="form">
+
+				<form id="cf-form" method="post" action="https://api.formbucket.com/f/buk_YR7xGobkQQBP0bmXAWXtxn1B">
+
+					<fieldset>
+						<label for="name">What's your name?</label>
+
+						<input required cf-questions="Hi there! What's your name? 😊" type="text" class="form-control" name="name" id="name">
+					</fieldset>
+
+					<fieldset>
+						<label for="occupation">Services</label>
+						<div class="radio">
+						<label>
+							<input cf-questions="Great to meet you, {previous-answer}! I'm Ally-Kareena, How can I help you?|Awesome, {previous-answer}! And How can I assist you?" type="radio" name="occupation" id="occupation-1" value="Take a Ride">
+							Take a Ride
+						</label>
+						</div>
+						<div class="radio">
+						<label>
+							<input type="radio" name="occupation" id="occupation-2" value="Order Food">
+							Order Food
+						</label>
+						</div>
+						<div class="radio">
+						<label>
+							<input type="radio" name="occupation" id="occupation-3" value="Make a appointment to Doctor">
+							Make a appointment to Doctor
+						</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="occupation" id="occupation-2" value="Want to be a Hollywood Hero">
+								Want to be a Hollywood Hero
+							</label>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<label for="company">Home Address</label>
+						<input cf-questions="Where do you live ?" type="text" class="form-control" name="company" id="company">
+					</fieldset>
+
+					<fieldset>
+						<label for="opinion">Will you share something?</label>
+						<select cf-questions="Do you think Hello Ally Kareena will replace virtual assistance in the future?" name="opinion" id="opinion" class="form-control">
+							<option></option>
+							<option>Definitely</option>
+							<option>Maybe</option>
+							<option>Yes</option>
+						</select>
+					</fieldset>
+
+					<fieldset>
+						<label for="email">Email</label>
+						<input pattern=".+\@.+\..+" cf-error="E-mail not correct" cf-questions="If you want to stay updated on conversational interfaces from HelloAlly-Kareena, please give me your email." type="email" class="form-control" name="email" id="your-email">
+					</fieldset>
+
+					<fieldset style="display: none;">
+						<label for="thats-all">Are you ready to submit the form?</label>
+						<select cf-questions="Are you ready to submit the form?" name="submit-form" id="submit-form" class="form-control">
+							<option></option>
+							<option>Yup</option>
+						</select>
+					</fieldset>
+
+					<fieldset style="display: none;">
+						<label for="thats-all">Want to start over?</label>
+						<select cf-questions="Want to start over?" name="repeat" id="repeat" class="form-control">
+							<option></option>
+							<option>Yes, let's go again</option>
+						</select>
+					</fieldset>
+
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</section>
+
+			<section id="cf-context" role="cf-context" cf-context>
+				
+			</section>
+		</main>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-69941652-5', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+	</body>
+
+</html>
+{% endblock content %}

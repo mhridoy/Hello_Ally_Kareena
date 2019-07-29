@@ -1,0 +1,67 @@
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../ static/style.css">
+ {% if title %}
+        <title>Hello Ally-Kareena {{ title }}</title>
+    {% else %}
+        <title>Sign Up</title>
+    {% endif %}
+    </head>
+<body>
+<section class="home-banner-area relative" id="home" data-parallax="scroll" data-image-src="../static/img/header-bg.jpg">
+<body>
+
+   <div class="overlay-bg overlay"></div>
+		<h1 class="template-name">Sign Up</h1>
+        <div class="container">
+			<div class="row fullscreen">
+				<div class="banner-content col-lg-11">
+					<main role="main" class="container">
+      <div class="row">
+        <div class="col-md-3">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+
+
+        </div>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group" >
+                <legend class="border-bottom mb-4"><font color="white">Join Today</font></legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit"><font color="white">Sign Up</font></button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+               <font color="white">Already have an Account ? </font> <a class="ml-2" href="{% url 'login' %}"><font color="white">Sign In</font></a>
+            </small>
+        </div>
+    </div>
+           </main>
+				</div>
+			</div>
+		</div>
+    </body>
+</section>
+</body>
+
+
+
+
+{% endblock content %}
